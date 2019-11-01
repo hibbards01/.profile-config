@@ -13,7 +13,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 set TERM xterm-256color; export TERM
-export PS1='\[\033[94m\][\[\033[m\]\[\033[90m\]\w\[\033[m\]\[\033[94m\]]\[\033[m\]\[\033[91m\]$(__git_ps1 " (%s)")\n\[\033[m\]\[\033[94m\]⮑\[\033[m\]  '
+export PS1='\[\033[94m\][\[\033[m\]\[\033[90m\]\w\[\033[m\]\[\033[94m\]]\[\033[m\]\[\033[91m\]$(__git_ps1 " (%s)")\n\[\033[m\]\[\033[94m\]->\[\033[m\]  '
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad # defines nicer colors for the LS command
 
