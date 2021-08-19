@@ -55,6 +55,8 @@ alias gpu="git pull"
 alias gp="git push"
 alias gpf="git push --force-with-lease"
 alias gps="git push --set-upstream"
+alias gpso="git push --set-upstream origin"
+alias gpd="git push -d"
 alias gl="git log"
 alias gl3="git log -3"
 alias gr="git remote"
@@ -72,8 +74,48 @@ alias gsl="git stash list"
 alias gsd="git stash drop"
 alias gsp="git stash pop"
 alias gsc="git stash clear"
+alias gres="git restore --staged"
 
 # Adding to the PATH
 export PATH="$HOME/bin:$PATH"
 export VISUAL='subl -w'
 export EDITOR="$VISUAL"
+
+###
+# Opens github.com based on the 'git remote'
+#
+# $1 Action to perform.
+##
+function github () 
+{
+    local arg1="$1"
+    local repo=$(git config --get remote.origin.url)
+
+    # Format to the correct url.
+    if [[ $repo == git* ]]; then
+        repo="https://www.github.com/"${repo##*:}
+
+        if [[ $repo == *git ]]; then
+            repo=${repo%%.git}
+        fi
+    fi
+
+    # See if an argument is given. If so changed the url based off that.
+    echo "$arg1"
+    if [[ ! -z "$arg1" ]]; then
+        local branch=$(git rev-parse --abbrev-ref HEAD)
+        if [[ "$arg1" == "commits" ]]; then
+            repo="$repo/commits/$branch"
+        elif [[ "$arg1" == "branch" ]]; then
+            repo="$repo/tree/$branch"
+        elif [[ "$arg1" == "pr" ]]; then
+            repo="$repo/compare/$branch?expand=1"
+        elif [[ "$arg1" == "actions" ]]; then
+            repo="$repo/actions"
+        fi
+    fi
+
+    # Finally open the url in chrome.
+    xdg-open "$repo"
+}
+
