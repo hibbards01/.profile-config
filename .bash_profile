@@ -69,11 +69,12 @@ alias gre="git reset"
 alias greh="git reset HEAD"
 alias grehh="git reset HEAD --hard"
 alias grem="git reset --mixed"
-alias gss="git stash save"
+alias gss="git stash push"
 alias gsl="git stash list"
 alias gsd="git stash drop"
 alias gsp="git stash pop"
 alias gsc="git stash clear"
+alias gsa="git stash apply"
 alias gres="git restore --staged"
 
 # Adding to the PATH
