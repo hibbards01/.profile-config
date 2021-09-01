@@ -2,10 +2,10 @@
 # This contains certain commands that I use regularly for the terminal.
 
 # Adds tab completion for git commands
-source ~/.terminal-profile/.git-completion.sh
+source ~/.profile-config/.git-completion.sh
 
 # Adds the ability to show git information in the PS1 line.
-source ~/.terminal-profile/.git-prompt.sh
+source ~/.profile-config/.git-prompt.sh
 
 # Fix colors on prompt and add git branch name
 # Shows more details in prompt.
@@ -23,6 +23,8 @@ alias git-remove-untracked='git fetch --prune && git branch -r | awk "{print \$1
 alias git-add-identity="ssh-add -K ~/.ssh/id_rsa"
 alias rmd="rm -rf"
 alias ll="ls -al"
+alias ue5="/home/samwise/applications/UnrealEngine/Engine/Binaries/Linux/UnrealEditor > /dev/null 2>&1 &"
+alias rgb="openrgb --profile zelda.orp"
 
 # Git aliases
 alias gci="git commit"
