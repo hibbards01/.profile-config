@@ -25,6 +25,8 @@ alias rmd="rm -rf"
 alias ll="ls -al"
 alias ue5="/home/samwise/applications/UnrealEngine/Engine/Binaries/Linux/UnrealEditor > /dev/null 2>&1 &"
 alias rgb="openrgb --profile zelda.orp"
+alias movesteam="wmctrl-app -w \"Steam\" -m1"
+alias steamsavefolder="cd ~/.steam/debian-installation/steamapps/compatdata/"
 
 # Git aliases
 alias gci="git commit"
@@ -83,6 +85,9 @@ alias gres="git restore --staged"
 export PATH="$HOME/bin:$PATH"
 export VISUAL='subl -w'
 export EDITOR="$VISUAL"
+export DENO_INSTALL="/home/samwise/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="/home/samwise/applications/swift-5.5.3/usr/bin:$PATH"
 
 ###
 # Opens github.com based on the 'git remote'
