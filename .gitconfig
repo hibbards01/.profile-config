@@ -1,15 +1,28 @@
-[fetch]
-        recurseSubmodules = false
+# This is Git's per-user configuration file.
 [user]
-        name = Sam Hibbard
-        email = samuel.hibbard@usaa.com
-[alias]
-        ci = commit
-        st = status
-        co = checkout
-        br = branch
-        unstage = reset HEAD --
-        last = log -1 HEAD
-        logall = log --all --graph --oneline --decorate
-        logsome = log --all --graph --pretty=short --decorate
-        logdiff = log --graph --oneline --decorate
+# Please adapt and uncomment the following lines:
+	name = Sam Hibbard
+	email = hibbards01@gmail.com
+[color]
+    ui = auto
+[color "branch"]
+    current = cyan reverse
+    local = magenta
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green
+    changed = red
+    untracked = cyan
+[mergetool "code"]
+    cmd = code -w $MERGED
+    trustExitCode = false
+[merge]
+    tool = code
+    conflictstyle = diff3
+[core]
+    editor = code -w
