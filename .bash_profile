@@ -3,11 +3,10 @@
 # This contains certain commands that I use regularly for the terminal.
 
 # Adds tab completion for git commands
-source ~/.profile-config/.git-completion.sh
-# source ~/.profile-config/.git-completion.zsh
+# source ~/.profile-config/.git-completion.sh
 
 # Adds the ability to show git information in the PS1 line.
-source ~/.profile-config/.git-prompt.sh
+# source ~/.profile-config/.git-prompt.sh
 
 # Fix colors on prompt and add git branch name
 # Shows more details in prompt.
@@ -16,7 +15,6 @@ export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 set TERM xterm-256color; export TERM
 # export PS1='\[\033[94m\][\[\033[m\]\[\033[90m\]\w\[\033[m\]\[\033[94m\]]\[\033[m\]\[\033[91m\]$(__git_ps1 " (%s)")\n\[\033[m\]\[\033[94m\]⮑\[\033[m\]  '
-setopt PROMPT_SUBST ; PROMPT='%F{blue}[%f%F{245}%~%f%F{blue}]%F{red}$(__git_ps1 " (%s)")%f%F{blue}'$'\n''⮑ %f '
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad # defines nicer colors for the LS command
 
@@ -127,6 +125,6 @@ function github ()
     fi
 
     # Finally open the url in chrome.
-    xdg-open "$repo"
+    open "$repo"
 }
 

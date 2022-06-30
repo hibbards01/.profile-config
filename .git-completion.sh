@@ -2770,8 +2770,8 @@ esac
 __git_complete_revlist
 }
 
-# if [[ -n ${ZSH_VERSION-} ]]; then
-# echo "WARNING: this script is deprecated, please see git-completion.zsh" 1>&2
+if [[ -n ${ZSH_VERSION-} ]]; then
+echo "WARNING: this script is deprecated, please see git-completion.zsh" 1>&2
 
 autoload -U +X compinit && compinit
 
